@@ -10,16 +10,16 @@
 </p>
 
 # About
-
 Auto Elytra is an easy-to-use Elytra switcher.
 
 Equip your Elytra by just pressing a key, or put it in automatic mode to do it automatically for you.
 
 With automatic mode enabled, just jump in the air and your Elytra will be equipped!
-<br>
+<br><br>
 
-# Download
-https://devpieter.nl/minecraft/minecraft-mod/auto-elytra-for-fabric
+[Download](https://devpieter.nl/minecraft/minecraft-mod/auto-elytra-for-fabric)
+
+<br>
 
 # Tested Versions
 
