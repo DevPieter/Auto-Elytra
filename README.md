@@ -18,6 +18,9 @@ Equip your Elytra by just pressing a key, or put it in automatic mode to do it a
 With automatic mode enabled, just jump in the air and your Elytra will be equipped!
 <br>
 
+# Download
+https://devpieter.nl/minecraft/minecraft-mod/auto-elytra-for-fabric
+
 # Tested Versions
 
 <p align="center"> 
