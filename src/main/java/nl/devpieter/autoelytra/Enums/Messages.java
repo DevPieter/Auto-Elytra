@@ -7,12 +7,9 @@ import nl.devpieter.autoelytra.Utils.LogUtils;
 
 public enum Messages {
 
-	NO_ELYTRA("&cNo valid elytra found!", true, false),
-	NO_CHESTPLATE("&cNo valid chestplate found!", true, false),
-	NO_INVENTORY_SPACE("&cNo free inventory space was found!", true, false),
+	NO_ELYTRA("&cNo valid elytra found!", true, false), NO_CHESTPLATE("&cNo valid chestplate found!", true, false), NO_INVENTORY_SPACE("&cNo free inventory space was found!", true, false),
 
-	EQUIP_TYPE_MANUAL("&aEquip type set to &6Manual&a.", false, true),
-	EQUIP_TYPE_AUTOMATIC("&aEquip type set to &6Automatic&a.", false, true);
+	EQUIP_TYPE_MANUAL("&aEquip type set to &6Manual&a.", false, true), EQUIP_TYPE_AUTOMATIC("&aEquip type set to &6Automatic&a.", false, true);
 
 	public String message;
 	public boolean usePrefix;
@@ -26,6 +23,18 @@ public enum Messages {
 	private PlayerEntity player = MinecraftClient.getInstance().player;
 
 	public void sendMessage() {
+		if (player == null || player.world == null)
+			return;
+
+		if (usePrefix)
+			player.sendMessage(new LiteralText(translateColorCodes('&', String.format("&3[&dAuto Elytra&3]&r %s", message))), actionBar);
+		else
+			player.sendMessage(new LiteralText(translateColorCodes('&', message)), actionBar);
+
+		LogUtils.logMessage(translateColorCodes('&', message));
+	}
+
+	public void sendMessage(boolean usePrefix, boolean actionBar) {
 		if (player == null || player.world == null)
 			return;
 

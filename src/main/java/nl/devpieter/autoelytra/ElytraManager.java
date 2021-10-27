@@ -3,6 +3,10 @@ package nl.devpieter.autoelytra;
 import java.util.Arrays;
 
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.ChatScreen;
+import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
+import net.minecraft.client.gui.screen.ingame.InventoryScreen;
+import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -15,19 +19,24 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.screen.slot.SlotActionType;
+import net.minecraft.sound.SoundEvent;
+import nl.devpieter.autoelytra.Config.ConfigManager;
 import nl.devpieter.autoelytra.Config.Settings;
 import nl.devpieter.autoelytra.Enums.EquipType;
 import nl.devpieter.autoelytra.Enums.Messages;
+import nl.devpieter.autoelytra.Screen.SettingsScreen;
 
 public class ElytraManager {
 
 	private final MinecraftClient client;
+	private final ConfigManager config;
 	public final Item[] armorList;
-	public final int MIN = -999;
+	public final int MIN = Integer.MIN_VALUE;
 	public final int INVENTORY_SIZE = 36;
 
-	public ElytraManager(Item[] armorList) {
+	public ElytraManager(Item[] armorList, ConfigManager config) {
 		this.client = MinecraftClient.getInstance();
+		this.config = config;
 		this.armorList = armorList;
 	}
 
@@ -35,29 +44,34 @@ public class ElytraManager {
 		PlayerEntity player = client.player;
 		PlayerInventory inventory = player.getInventory();
 
+		if (hasScreenOpen())
+			return;
+
 		if (!checkIfValidInventory(inventory))
 			return;
 
 		int elytraSlot = getElytraSlot(inventory);
 		if (elytraSlot == MIN && !player.getInventory().getStack(38).isOf(Items.ELYTRA))
-			if (Settings.EQUIP_TYPE.value.equalsIgnoreCase(EquipType.MANUAL.toString()))
-				Messages.NO_ELYTRA.sendMessage();
+			sendMessage(Messages.NO_ELYTRA);
 
 		int chestplateSlot = getChestplateSlot(inventory);
 		if (chestplateSlot == MIN && !(player.getInventory().getStack(38).getItem() instanceof ArmorItem))
-			if (Settings.EQUIP_TYPE.value.equalsIgnoreCase(EquipType.MANUAL.toString()))
-				Messages.NO_CHESTPLATE.sendMessage();
+			sendMessage(Messages.NO_CHESTPLATE);
 
 		if (elytraSlot != MIN && player.getInventory().getStack(38).getItem().equals(Items.AIR)) {
 			client.interactionManager.clickSlot(0, elytraSlot, 0, SlotActionType.QUICK_MOVE, client.player);
+			playSound(player.getInventory().getStack(38));
 		} else if (chestplateSlot != MIN && player.getInventory().getStack(38).isOf(Items.AIR)) {
 			client.interactionManager.clickSlot(0, chestplateSlot, 0, SlotActionType.QUICK_MOVE, client.player);
+			playSound(player.getInventory().getStack(38));
 		} else if (chestplateSlot != MIN && player.getInventory().getStack(38).isOf(Items.ELYTRA)) {
 			client.interactionManager.clickSlot(0, 6, 0, SlotActionType.QUICK_MOVE, client.player);
 			client.interactionManager.clickSlot(0, chestplateSlot, 0, SlotActionType.QUICK_MOVE, client.player);
+			playSound(player.getInventory().getStack(38));
 		} else if (elytraSlot != MIN && (player.getInventory().getStack(38).getItem() instanceof ArmorItem)) {
 			client.interactionManager.clickSlot(0, 6, 0, SlotActionType.QUICK_MOVE, client.player);
 			client.interactionManager.clickSlot(0, elytraSlot, 0, SlotActionType.QUICK_MOVE, client.player);
+			playSound(player.getInventory().getStack(38));
 		}
 	}
 
@@ -65,19 +79,23 @@ public class ElytraManager {
 		PlayerEntity player = client.player;
 		PlayerInventory inventory = player.getInventory();
 
+		if (hasScreenOpen())
+			return;
+
 		if (!checkIfValidInventory(inventory))
 			return;
 
 		int chestplateSlot = getChestplateSlot(inventory);
 		if (chestplateSlot == MIN && !(player.getInventory().getStack(38).getItem() instanceof ArmorItem))
-			if (Settings.EQUIP_TYPE.value.equalsIgnoreCase(EquipType.MANUAL.toString()))
-				Messages.NO_CHESTPLATE.sendMessage();
+			sendMessage(Messages.NO_CHESTPLATE);
 
 		if (chestplateSlot != MIN && player.getInventory().getStack(38).isOf(Items.AIR)) {
 			client.interactionManager.clickSlot(0, chestplateSlot, 0, SlotActionType.QUICK_MOVE, client.player);
+			playSound(player.getInventory().getStack(38));
 		} else if (chestplateSlot != MIN && player.getInventory().getStack(38).isOf(Items.ELYTRA)) {
 			client.interactionManager.clickSlot(0, 6, 0, SlotActionType.QUICK_MOVE, client.player);
 			client.interactionManager.clickSlot(0, chestplateSlot, 0, SlotActionType.QUICK_MOVE, client.player);
+			playSound(player.getInventory().getStack(38));
 		}
 	}
 
@@ -85,29 +103,36 @@ public class ElytraManager {
 		PlayerEntity player = client.player;
 		PlayerInventory inventory = player.getInventory();
 
+		if (hasScreenOpen())
+			return;
+
 		if (!checkIfValidInventory(inventory))
 			return;
 
 		int elytraSlot = getElytraSlot(inventory);
 		if (elytraSlot == MIN && !player.getInventory().getStack(38).isOf(Items.ELYTRA))
-			if (Settings.EQUIP_TYPE.value.equalsIgnoreCase(EquipType.MANUAL.toString()))
-				Messages.NO_ELYTRA.sendMessage();
+			sendMessage(Messages.NO_ELYTRA);
 
 		if (elytraSlot != MIN && player.getInventory().getStack(38).isOf(Items.AIR)) {
 			client.interactionManager.clickSlot(0, elytraSlot, 0, SlotActionType.QUICK_MOVE, client.player);
+			playSound(player.getInventory().getStack(38));
 		} else if (elytraSlot != MIN && (player.getInventory().getStack(38).getItem() instanceof ArmorItem)) {
 			client.interactionManager.clickSlot(0, 6, 0, SlotActionType.QUICK_MOVE, client.player);
 			client.interactionManager.clickSlot(0, elytraSlot, 0, SlotActionType.QUICK_MOVE, client.player);
+			playSound(player.getInventory().getStack(38));
 		}
 	}
 
-	private boolean checkIfValidInventory(PlayerInventory inventory) {
+	public boolean checkIfValidInventory(PlayerInventory inventory) {
 		if (inventory.getEmptySlot() == -1) {
-			if (Settings.EQUIP_TYPE.value.equalsIgnoreCase(EquipType.MANUAL.toString()))
-				Messages.NO_INVENTORY_SPACE.sendMessage();
+			sendMessage(Messages.NO_INVENTORY_SPACE);
 			return false;
 		}
 		return true;
+	}
+
+	private boolean hasScreenOpen() {
+		return !(client.currentScreen instanceof CreativeInventoryScreen || client.currentScreen instanceof InventoryScreen || client.currentScreen instanceof ChatScreen || client.currentScreen instanceof SettingsScreen || client.currentScreen == null);
 	}
 
 	public int getElytraSlot(Inventory inventory) {
@@ -202,5 +227,19 @@ public class ElytraManager {
 		level += EnchantmentHelper.getLevel(Enchantments.UNBREAKING, item);
 		level += EnchantmentHelper.getLevel(Enchantments.MENDING, item);
 		return level;
+	}
+
+	private void sendMessage(Messages message) {
+		if (((EquipType) AutoElytra.getConfigManager().getEnum(Settings.EQUIP_TYPE.key, EquipType.class, false)).equals(EquipType.MANUAL))
+			message.sendMessage();
+	}
+
+	private void playSound(ItemStack itemStack) {
+		if (!config.getBoolean(Settings.PLAY_EQUIP_SOUND.key, false))
+			return;
+
+		SoundEvent soundEvent = itemStack.getEquipSound();
+		if (!itemStack.isEmpty() && soundEvent != null)
+			client.getSoundManager().play(PositionedSoundInstance.master(soundEvent, 1.0F));
 	}
 }

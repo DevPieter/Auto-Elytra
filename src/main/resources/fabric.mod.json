@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "autoelytra",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"name": "Auto Elytra",
 	"description": "Auto Elytra is an easy-to-use Elytra switcher. When you jump in the air, your Elytra will automatically equip.",
 	"authors": [
@@ -11,7 +11,7 @@
 		"homepage": "https://devpieter.nl/minecraft/minecraft-mod/auto-elytra/",
 		"sources": "https://github.com/DevPieter/Auto-Elytra/"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/autoelytra/icon.png",
 	"environment": "*",
 	"entrypoints": {
