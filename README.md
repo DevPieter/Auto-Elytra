@@ -1,5 +1,4 @@
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K05621Y)
-<br>
 # Auto Elytra (for Fabric)
 
 <p align="center">
@@ -15,14 +14,10 @@ Auto Elytra is an easy-to-use Elytra switcher.
 Equip your Elytra by just pressing a key, or put it in automatic mode to do it automatically for you.
 
 With automatic mode enabled, just jump in the air and your Elytra will be equipped!
-<br><br>
 
-[Download](https://devpieter.nl/minecraft/minecraft-mod/auto-elytra-for-fabric)
-
-<br>
+[Download](https://devpieter.nl/minecraft/minecraft-mod/auto-elytra-for-fabric) | [Changelog](https://github.com/DevPieter/Auto-Elytra/blob/main/CHANGELOG.md)
 
 # Tested Versions
-
 <p align="center"> 
 <img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16&amp;color=critical" alt="Minecraft">
 <img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16.1&amp;color=critical" alt="Minecraft">
@@ -34,5 +29,5 @@ With automatic mode enabled, just jump in the air and your Elytra will be equipp
 <img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.17&amp;color=critical" alt="Minecraft">
 <img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.17.1&amp;color=success" alt="Minecraft">
 <br> <br> <br>
-<img src="https://github.com/DevPieter/Auto-Elytra/raw/main/img/icon.png" alt="Inco"/>
+<img src="https://github.com/DevPieter/Auto-Elytra/raw/main/img/icon_2.0.png" alt="Inco"/>
 </p>
