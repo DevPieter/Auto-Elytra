@@ -25,22 +25,23 @@ With automatic mode enabled, just jump in the air and your Elytra will be equipp
 - Settings screen (GUI).
 - Easy to use.
 
-[Download](https://devpieter.nl/minecraft/minecraft-mod/auto-elytra-for-fabric) | [Changelog](https://github.com/DevPieter/Auto-Elytra/blob/main/CHANGELOG.md)
+# Download
+
+[Download](https://devpieter.nl/minecraft/minecraft-mod/auto-elytra-for-fabric) |
+[Changelog](https://github.com/DevPieter/Auto-Elytra/blob/main/CHANGELOG.md)
 
 # Tested Versions
 
-![Minecraft](https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16&amp;color=critical)
+![Minecraft 1.16](https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16&amp;color=critical)
+![Minecraft 1.16.1](https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16.1&amp;color=critical)
+![Minecraft 1.16.2](https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16.2&amp;color=success)
+![Minecraft 1.16.3](https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16.3&amp;color=success)
+![Minecraft 1.16.4](https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16.4&amp;color=success)
+![Minecraft 1.16.5](https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16.5&amp;color=success)
 
-<p align="center"> 
-<img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16&amp;color=critical" alt="Minecraft">
-<img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16.1&amp;color=critical" alt="Minecraft">
-<img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16.2&amp;color=success" alt="Minecraft">
-<img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16.3&amp;color=success" alt="Minecraft">
-<img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16.4&amp;color=success" alt="Minecraft">
-<img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16.5&amp;color=success" alt="Minecraft">
+![Minecraft 1.17](https://img.shields.io/static/v1?label=Minecraft&amp;message=1.17&amp;color=critical)
+![Minecraft 1.17.1](https://img.shields.io/static/v1?label=Minecraft&amp;message=1.17.1&amp;color=success)
 
-<img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.17&amp;color=critical" alt="Minecraft">
-<img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.17.1&amp;color=success" alt="Minecraft">
-<br> <br> <br>
+<div align="center">
 <img src="https://github.com/DevPieter/Auto-Elytra/raw/main/img/icon_2.0.png" alt="Inco"/>
-</p>
+</div>
