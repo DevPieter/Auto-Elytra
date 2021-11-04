@@ -9,15 +9,26 @@
 </p>
 
 # About
+
 Auto Elytra is an easy-to-use Elytra switcher.
 
 Equip your Elytra by just pressing a key, or put it in automatic mode to do it automatically for you.
 
 With automatic mode enabled, just jump in the air and your Elytra will be equipped!
 
+# Features
+
+- Manual and automatic mode.
+- Equip Elytra when holding fireworks.
+- Equip Elytra when you jump in the air.
+- Customizable settings.
+- Settings screen (GUI).
+- Easy to use.
+
 [Download](https://devpieter.nl/minecraft/minecraft-mod/auto-elytra-for-fabric) | [Changelog](https://github.com/DevPieter/Auto-Elytra/blob/main/CHANGELOG.md)
 
 # Tested Versions
+
 <p align="center"> 
 <img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16&amp;color=critical" alt="Minecraft">
 <img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16.1&amp;color=critical" alt="Minecraft">
