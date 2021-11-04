@@ -29,6 +29,8 @@ With automatic mode enabled, just jump in the air and your Elytra will be equipp
 
 # Tested Versions
 
+![Minecraft](https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16&amp;color=critical)
+
 <p align="center"> 
 <img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16&amp;color=critical" alt="Minecraft">
 <img src="https://img.shields.io/static/v1?label=Minecraft&amp;message=1.16.1&amp;color=critical" alt="Minecraft">
