@@ -22,7 +22,6 @@ import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.sound.SoundEvent;
 import nl.devpieter.autoelytra.Config.ConfigManager;
 import nl.devpieter.autoelytra.Config.Settings;
-import nl.devpieter.autoelytra.Enums.EquipType;
 import nl.devpieter.autoelytra.Enums.Messages;
 import nl.devpieter.autoelytra.Screen.SettingsScreen;
 
@@ -125,7 +124,8 @@ public class ElytraManager {
 
 	public boolean checkIfValidInventory(PlayerInventory inventory) {
 		if (inventory.getEmptySlot() == -1) {
-			sendMessage(Messages.NO_INVENTORY_SPACE);
+			if (config.getBoolean(Settings.SHOW_INVENTORY_FULL_WARNING.key, false))
+				sendMessage(Messages.NO_INVENTORY_SPACE);
 			return false;
 		}
 		return true;
@@ -230,8 +230,7 @@ public class ElytraManager {
 	}
 
 	private void sendMessage(Messages message) {
-		if (((EquipType) AutoElytra.getConfigManager().getEnum(Settings.EQUIP_TYPE.key, EquipType.class, false)).equals(EquipType.MANUAL))
-			message.sendMessage();
+		message.sendMessage(false, true);
 	}
 
 	private void playSound(ItemStack itemStack) {

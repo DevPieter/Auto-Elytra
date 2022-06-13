@@ -7,9 +7,12 @@ import nl.devpieter.autoelytra.Utils.LogUtils;
 
 public enum Messages {
 
-	NO_ELYTRA("&cNo valid elytra found!", true, false), NO_CHESTPLATE("&cNo valid chestplate found!", true, false), NO_INVENTORY_SPACE("&cNo free inventory space was found!", true, false),
+	NO_ELYTRA("&cNo valid elytra found!", true, false),
+	NO_CHESTPLATE("&cNo valid chestplate found!", true, false),
+	NO_INVENTORY_SPACE("&cNo free inventory space was found!", true, false),
 
-	EQUIP_TYPE_MANUAL("&aEquip type set to &6Manual&a.", false, true), EQUIP_TYPE_AUTOMATIC("&aEquip type set to &6Automatic&a.", false, true);
+	EQUIP_TYPE_MANUAL("&aEquip type set to &6Manual&a.", false, true),
+	EQUIP_TYPE_AUTOMATIC("&aEquip type set to &6Automatic&a.", false, true);
 
 	public String message;
 	public boolean usePrefix;

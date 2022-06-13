@@ -42,8 +42,7 @@ public class AutoElytra implements ModInitializer {
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 
 			if (client != null && client.player != null && client.player.getInventory() != null)
-				if (!elytraManager.checkIfValidInventory(client.player.getInventory()) && configManager.getBoolean(Settings.SHOW_INVENTORY_FULL_WARNING.key, false))
-					Messages.NO_INVENTORY_SPACE.sendMessage(false, true);
+				elytraManager.checkIfValidInventory(client.player.getInventory());
 
 			boolean manualEquipEnabled = ((EquipType) configManager.getEnum(Settings.EQUIP_TYPE.key, EquipType.class, false)).equals(EquipType.MANUAL);
 			if (keybindingsManager.swap.wasPressed() && manualEquipEnabled)
