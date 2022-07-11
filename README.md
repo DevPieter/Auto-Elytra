@@ -43,5 +43,5 @@ With automatic mode enabled, just jump in the air and your Elytra will be equipp
 ![Minecraft 1.17.1](https://img.shields.io/static/v1?label=Minecraft&amp;message=1.17.1&amp;color=success)
 
 <div align="center">
-<img src="https://github.com/DevPieter/Auto-Elytra/raw/main/img/icon_2.0.png" alt="Inco"/>
+<img src="https://github.com/DevPieter/Auto-Elytra/raw/main/img/icon_2.0.png" alt="Icon"/>
 </div>
